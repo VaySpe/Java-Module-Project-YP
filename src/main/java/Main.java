@@ -29,21 +29,24 @@ public class Main {
     public static void main(String[] args) {
         boolean numberOfPeopleCorrectly = false;
         Scanner scanner = new Scanner(System.in);
-        while (!numberOfPeopleCorrectly) {
+        while (!numberOfPeopleCorrectly) { // пока не корректное колво людей
             System.out.println("на скольких человек необходимо разделить счёт?");
             // принимаем не известный тип данных
             String people = scanner.nextLine();
-            if (isInt(people)) {
-                numberOfPeopleCorrectly = true;
+            if (isInt(people)) { // Проверяем на интовость кол-во чел и более 1
+                numberOfPeopleCorrectly = true; // Корректное колво людей
             }
         }
         System.out.println("Добавление товаров в калькулятор");
-        while (true) {
+        while (true) { // собираем товары
             System.out.println("Пример:\n Помидор 10.45");
             String product = scanner.next();
+            if (product.equalsIgnoreCase("завершить")) {
+                break;
+            }
             // принимаем не известный тип данных
             String strPrice = scanner.next();
-            if (product.equalsIgnoreCase("завершить") || strPrice.equalsIgnoreCase("завершить")) {
+            if (strPrice.equalsIgnoreCase("завершить")) {
                 break;
             }
             if (isPriceDouble(strPrice)){
