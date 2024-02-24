@@ -15,4 +15,19 @@ public class Formater {
         }
         return Integer.parseInt (people);
     }
+
+    public static String rub (double priceDouble){
+        int price = (int) priceDouble;
+        int units = price%10;
+        int dozens = price%100/10;
+        if (dozens == 1){
+            return "рублей";
+        } else if (units > 4 || units == 0){
+            return "рублей";
+        } else if (units == 1) {
+            return "рубль";
+        } else {
+            return "рубля";
+        }
+    }
 }

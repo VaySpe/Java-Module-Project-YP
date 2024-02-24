@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-
 public class Calculator {
     double account = 0;
     int people;
 
-    double personalAccount(double account, int people){
+    double personalAccount(){
         return  account / people;
     }
     Calculator(int people){

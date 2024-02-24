@@ -65,18 +65,27 @@ public class Main {
                 System.out.println("Общий чек составляет:" + calculator.account);
                 isAddProduct = false;
             }
-
+            System.out.println("Хотите ли Вы добавить ещё один товар?");
             while (!isAddProduct){ // проверяем хочет ли пользователь добавить еще товар и переспрашиваем при не понятном ответе
-                System.out.println("Хотите ли Вы добавить ещё один товар? Да/Нет");
-                String ans = scanner.nextLine();
+                String ans = scanner.nextLine().trim();
                 if (ans.equalsIgnoreCase("нет")){
                     break;
                 } else if (ans.equalsIgnoreCase("да")) {
+                    System.out.println("Введите название и цену");
                     isAddProduct = true;
+                } else {
+                    System.out.println("Введите да или нет");
                 }
             }
         }
         // вывод всех товаров
-        // вывод скольк одолжен заплатить каждый
+        System.out.println("Добавленные товары:\n");
+        for (Product product : products){
+            String output = product.title + " " + product.price + " " + Formater.rub(product.price);
+            System.out.println(output);
+        }
+        // вывод сколько должен заплатить каждый
+        System.out.print("Каждый должен заплатить: ");
+        System.out.println(Math.floor(calculator.personalAccount()*100)/100 + " " + Formater.rub(Math.floor(calculator.personalAccount()*100)/100));
     }
 }
