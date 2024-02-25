@@ -68,7 +68,7 @@ public class Main {
             System.out.println("Хотите ли Вы добавить ещё один товар?");
             while (!isAddProduct){ // проверяем хочет ли пользователь добавить еще товар и переспрашиваем при не понятном ответе
                 String ans = scanner.nextLine().trim();
-                if (ans.equalsIgnoreCase("нет")){
+                if (ans.equalsIgnoreCase("нет") || ans.equalsIgnoreCase("завершить")){
                     break;
                 } else if (ans.equalsIgnoreCase("да")) {
                     System.out.println("Введите название и цену");
